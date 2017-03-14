@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+
+</head>
+<body>
+<div class="container-gallery">
+	<header id="header">
+		<img src="images/header.jpg">
+	</header>
+	<nav>
+	<a href="index.html">Home</a>
+	<a href="map.html">Map</a>
+	<span class="nonlink">Gallery</span>
+	</nav>
+
+<div id="slideshow">
+	<img class="image" src="images/africa.jpg">
+	<img class="image" src="images/africa1.jpg">
+	<img class="image" src="images/africa3.jpg">
+	<img class="image" src="images/africa4.jpg">
+
+	<a class="back-button" onclick="plusDivs(-1)">&#10094;</a>
+	<a class="forward-button" onclick="plusDivs(+1)">&#10095;</a>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+function plusDivs(n){
+	showDivs(slideIndex += n);
+}
+
+function showDivs(n){
+	var i;
+	var x = document.getElementsByClassName("image");
+	if (n > x.length) {slideIndex = 1}
+	if (n < 1) {slideIndex = x.length}
+
+		var i = 0;
+	while(i < x.length){// slideshow using while-loop
+		x[i].style.display = "none";
+		i = i + 1;
+	}
+	x[slideIndex-1].style.display ="block";
+}
+</script>
+</body>
+</html>
